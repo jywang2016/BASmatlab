@@ -12,16 +12,9 @@ function [xleft, xright] = antenna(x,dir,d)
             x = repmat(x,n,1);
         end
         %n = size_dir(1); % n == k;
-        dims = size_dir(2);
-        
-        xleft = zeros(n,dims);
-        xright = zeros(n,dims);
-        for i = 1:n
-            xleft(i,:) = x(i,:) + dir(i,:)*d/2;
-            xright(i,:) = x(i,:) - dir(i,:)*d/2;
-        end
+        xleft = x + dir*d/2;
+        xright = x - dir*d/2;
     end
-
 end
 
 %test

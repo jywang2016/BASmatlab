@@ -148,18 +148,15 @@ function fit = BSOoptim2(f,constraint,lower,upper,init,options)
         end
 
         % gbest and pbest update
-        for j = 1:s
-            if fx(j) < fpbest(j)
-                fpbest(j) = fx(j);
-                xpbest(j,:) = x(j,:);
-            end
-            
-            if fx(j) < fgbest
-                xgbest = x(j,:);
-                fgbest = fx(j);
-            end
-        end
-        
+        ind_s = fx < fpbest;
+        fpbest(ind_s) = fx(ind_s);
+        xpbest(ind_s,:) = x(ind_s, :);
+        [ind_temp, temp_fgbest] = min(fx);
+        if temp_fgbest < fgbest
+            fgbest = temp_fgbest;
+            xgbest = x(ind_temp,:);
+        end      
+      
         % collect data
         x_store = cat(1,x_store,[i,xgbest,fgbest]);
 

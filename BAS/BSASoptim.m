@@ -110,11 +110,7 @@ function fit = BSASoptim(f,constraint,lower,upper,init,options)
             else
                 greedy_prob_random = rand(1);
                 if greedy_prob_random < pmin
-                    fbest = min(ftmp);
-                    index = find(ftmp == fbest);
-                    if length(index) > 1
-                        index = index(1);
-                    end
+                    [index, fbest] = min(ftmp);
                     xbest = xtmp(index,:);
                 else
                     tmp_xupdate_flag = find(xupdate_flag == 1);

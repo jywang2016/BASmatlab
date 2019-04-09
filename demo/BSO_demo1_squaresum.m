@@ -14,7 +14,7 @@ options.seed = 1;
 options.lambda = 0.4;
 options.penalty = 1e4;
 
-fit = BSASoptim(@SquareSums,[],[-2,-2,-2,-2],[2,2,2,2],[],options);
+fit = BSOoptim2(@SquareSums,[],[-2,-2,-2,-2],[2,2,2,2],[],options);
 fit.par
 fit.fitness
 
