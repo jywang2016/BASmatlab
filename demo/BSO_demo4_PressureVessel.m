@@ -1,7 +1,7 @@
 clear
 clc
 %% parameters description
-help BASoptim
+help BSOoptim
 
 %% Pressure_Vessel
 PV = Pressure_Vessel;
