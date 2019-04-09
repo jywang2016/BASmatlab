@@ -60,6 +60,17 @@ function options = BASoptimset(varargin)
     options.Pgreedy = 0.8;
     options.PstepUpdate = 0.8;
     options.nflag = 3;
+    
+    % for BSO
+    options.vmax = 5; % beetles' velocity
+    options.vmin = -5;
+    options.wstepmax = 0.9; % weights of step-size updating
+    options.wstepmin = 0.4;
+    options.wvmax = 0.9;% weights of velocity updating
+    options.wvmin = 0.4;
+    options.lambda = 0.4;% weights of positions updating
+    options.s = []; % swarm size
+    
     % the following field matching tech is referred to the PSOmatlab
     % toolbox
     % url: https://github.com/sdnchen/psomatlab/blob/master/psooptimset.m

@@ -20,7 +20,7 @@ Algorithm:
 -   ~~BAS~~
 -   ~~BSAS~~
 -   BAS-WPT(without parameter tuning)(Xiangyuan Jiang)
--   BSO(Beetle Swarm Optimizaiton) (Tiantian Wang)
+-   ~~BSO(Beetle Swarm Optimizaiton) (Tiantian Wang)~~
 -   ...
 
 UI interface:
