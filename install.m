@@ -1,3 +1,5 @@
+%% BASmatlab is a toolbox for implementation of BAS optimization algorithms in Matlab.
+
 % Add BAS to the path
 
 % Author: Jiangyu Wang
