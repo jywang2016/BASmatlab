@@ -1,6 +1,5 @@
 ---
 title: "BAS-toolbox manual"
-author: "JY Wang"
 date: "2019/04/09"
 header-includes:
   - \usepackage{ctex}
