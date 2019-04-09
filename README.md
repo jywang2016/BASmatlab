@@ -29,7 +29,7 @@ UI interface:
 
 Documents:
 
--   中文
+-   [中文文档](https://github.com/jywang2016/BASmatlab/blob/master/doc/manual.pdf)
 
 You can list your requirements in the [issues](https://github.com/jywang2016/BASmatlab/issues). Furthermore, if you have a good idea about BAS's mutations, pull requests and discussions are welcome. Contact me by email: <jywang_2016@hust.edu.cn>
 
