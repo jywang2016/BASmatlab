@@ -14,11 +14,7 @@ options.vmin = -2;
 options.seed = 1;
 options.lambda = 0.4;
 
-<<<<<<< HEAD
 fit = BSOoptim(@Michalewicz,[],[-6,0],[-1,2],[],options);
-=======
-fit = BSOoptim(@Michalewicz,[],[-6,0],[-1,2],[-3.9149,0.4089;-2.3984,1.7562],options);
->>>>>>> c89f2ea91b0c490c3b4f241a4912e56742ef4dae
 
 fit.par
 fit.fitness
