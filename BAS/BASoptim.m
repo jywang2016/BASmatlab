@@ -79,10 +79,8 @@ function fit = BASoptim(f,constraint,lower,upper,init,options)
     
     for i = 1:n
         
-        dir = directions(1,dims(2));
-        
+        dir = directions(1,dims(2));    
         [xleft, xright] = antenna(x,dir,d1);
-        
         xleft = bounds(xleft,upper,lower);
         xright = bounds(xright,upper,lower);
         

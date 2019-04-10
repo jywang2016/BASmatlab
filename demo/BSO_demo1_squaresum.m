@@ -14,7 +14,11 @@ options.seed = 1;
 options.lambda = 0.4;
 options.penalty = 1e4;
 
+<<<<<<< HEAD
 fit = BSOoptim(@SquareSums,[],[-2,-2,-2,-2],[2,2,2,2],[],options);
+=======
+fit = BSOoptim2(@SquareSums,[],[-2,-2,-2,-2],[2,2,2,2],[],options);
+>>>>>>> c89f2ea91b0c490c3b4f241a4912e56742ef4dae
 fit.par
 fit.fitness
 
