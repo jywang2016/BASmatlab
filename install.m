@@ -11,6 +11,10 @@ cd BAS;
 addpath(genpath(pwd));
 cd ..; 
 
+cd demo;
+addpath(genpath(pwd));
+cd ..; 
+
 disp('BAS was added to Matlab''s path.');
 
 disp('%---------installation----------%');

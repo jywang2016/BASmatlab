@@ -12,8 +12,8 @@ constraint = PV.con;
 % set initial step-size,sensing length and random seed
 
 options = BASoptimset;
-options.step1 = 40;
-options.d1 = 20;
+options.step1 = 20;%40
+options.d1 = 10;%20
 options.n = 500;
 options.vmax = 5.12;
 options.vmin = -5.12;

@@ -14,7 +14,7 @@ options.vmin = -2;
 options.seed = 1;
 options.lambda = 0.4;
 
-fit = BSASoptim(@GoldsteinPrice,[],[-2,-2],[2,2],[],options);
+fit = BSOoptim(@GoldsteinPrice,[],[-2,-2],[2,2],[],options);
 fit.par
 fit.fitness
 

@@ -26,7 +26,7 @@ function fit = BSOoptim(f,constraint,lower,upper,init,options)
         error('Check the dims of ''lower'' and ''upper''');
     end
     
-    % compart lower and upper
+    % compare lower and upper
     value_flag = lower < upper;
     if(ismember(0,value_flag))
         error('''lower''should be smaller than ''upper''');
@@ -49,13 +49,13 @@ function fit = BSOoptim(f,constraint,lower,upper,init,options)
     if isempty(init) 
         init = initialize(options.s, lower, upper);
     else
-        dim_init = size(init);
-        if dim_init(1) <= options.s
+        dim_init = size(init,1);
+        if dim_init <= options.s
             tmp_init = initialize(options.s, lower, upper);
-            tmp_init(1:dim_init(1),:) = init;
+            tmp_init(1:dim_init,:) = init;
             init = tmp_init;
         else
-            options.s = dim_init(1);
+            options.s = dim_init;
         end
     end
 

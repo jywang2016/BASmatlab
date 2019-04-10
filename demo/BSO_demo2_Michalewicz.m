@@ -14,7 +14,7 @@ options.vmin = -2;
 options.seed = 1;
 options.lambda = 0.4;
 
-fit = BSASoptim(@Michalewicz,[],[-6,0],[-1,2],[],options);
+fit = BSOoptim(@Michalewicz,[],[-6,0],[-1,2],[],options);
 
 fit.par
 fit.fitness

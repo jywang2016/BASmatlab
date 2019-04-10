@@ -26,7 +26,7 @@ function fit = BSASoptim(f,constraint,lower,upper,init,options)
         error('Check the dims of ''lower'' and ''upper''');
     end
     
-    % compart lower and upper
+    % compare lower and upper
     value_flag = lower < upper;
     if(ismember(0,value_flag))
         error('''lower''should be smaller than ''upper''');
@@ -40,7 +40,7 @@ function fit = BSASoptim(f,constraint,lower,upper,init,options)
         rng(options.seed);
     end
     
-    %   generate a init vector randomly
+    %   generate an init vector randomly
     if nargin < 5 || isempty(init) 
         init = lower + (upper - lower).*rand(size(lower));
     end
