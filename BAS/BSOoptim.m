@@ -136,7 +136,7 @@ function fit = BSOoptim(f,constraint,lower,upper,init,options)
         fright = fconstriant(xright,f,constraint,penalty);%f(xright);
 
         %tmp_sign = repmat(sign2(fleft - fright),1,s);
-        term_BAS = step1.*v.*sign2(fleft - fright);
+        term_BAS = step1.*v.*repmat(sign2(fleft - fright),1,dims(2));
 
         % v updates
         tmp_xgbest = repmat(xgbest,s,1);
