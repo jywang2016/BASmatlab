@@ -32,13 +32,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 函数形式
 
-目前工具箱提供了 `BAS` `BSAS` 以及 `BSO` 三种算法，都遵循下面的调用形式。
+目前工具箱提供了 `BAS` `BASWPT` `BSAS` 以及 `BSO` 三种算法，都遵循下面的调用形式。
 
 ```matlab
 options = BASoptimset;
 fit1 = BASoptim(objective,constraint,lower,upper,init,options);
-fit2 = BSASoptim(objective,constraint,lower,upper,init,options);
-fit3 = BSOoptim(objective,constraint,lower,upper,init,options);
+fit2 = BASWPToptim(objective,constraint,lower,upper,init,options);
+fit3 = BSASoptim(objective,constraint,lower,upper,init,options);
+fit4 = BSOoptim(objective,constraint,lower,upper,init,options);
 ```
 - objective; 目标函数的句柄；
 - constraint; 约束函数的句柄；可以取空,即`[]`
@@ -205,10 +206,12 @@ ans =
    6.1403e+03
 ```
 
-
 ## 后续工作
 
 - 待完成：目前还有部分的算法没有迁移到matlab工具箱。后续我会进行这部分地工作，当然，欢迎大家复现，并pull requests。
 - 问题：复现的过程中，我可能会犯一些错误。尽管程序可能不会出错，但是结果会不在预期范围之内。希望大家能够在[issues](https://github.com/jywang2016/BASmatlab/issues)下指出，当然，能给出可能的原因就更好了。
 - 新的算法：十分欢迎大家，列出自己的文章和代码，来丰富工具箱，不管是pull requests 或是 在[issues](https://github.com/jywang2016/BASmatlab/issues)里面提。
 
+## 补充
+
+新补充`BAS-WPT`算法。算法在BAS的基础上加入了变量的归一化，尽量消弭变量的不同量级给优化过程带来的影响。需要注意，原论文给出的伪代码中，状态更新时，步长和感应距离都没有“归一化”，变量$x$却是归一化后的。因此，在`options`内，设定该算法参数的时候，要“认为”优化问题是在[0,1]区间求解的。比如，原始问题如果步长设定为0.8，在`BAS-WPT`中可以考虑设定为0.5（仅做举例）。具体可以参见`demo`文件夹下的`BASWPT`优化算法示例。
